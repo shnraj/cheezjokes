@@ -1,0 +1,46 @@
+.app {
+  font-family: Lato;
+  font-weight: 300;
+  font-size: 14px;
+  margin: 0;
+  padding: 0; }
+  .app .app-header {
+    text-align: center;
+    background-color: #264;
+    height: 80px;
+    padding: 20px;
+    color: white; }
+  .app .app-title {
+    font-size: 1.5em; }
+  .app .app-intro {
+    font-size: large; }
+
+div {
+  border-bottom: solid 3px white;
+  padding: 10px; }
+  div ul {
+    padding: 0; }
+  div li {
+    list-style-type: none; }
+  div input {
+    font-family: Lato;
+    font-weight: 300;
+    font-size: 16px;
+    border: none;
+    line-height: 21px;
+    padding: 5px; }
+    div input:focus {
+      outline: none; }
+
+.random-jokes {
+  width: 30%; }
+  .random-jokes .list-of-jokes {
+    display: flex;
+    flex-direction: column; }
+
+.joke {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center; }
+  .joke .counter {
+    text-align: center; }
