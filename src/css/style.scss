@@ -1,83 +1,140 @@
-@mixin font($size) {
-    font-family: Lato;
-    font-weight: 300;
-    font-size: $size;
+@mixin h1font($size) {
+  font-family: 'Bungee Inline';
+  font-size: $size;
 }
 
-.app {  
-  @include font(14px);
+@mixin h3font($size) {
+  font-family: 'Bungee Hairline';
+  font-size: $size;
+  font-weight: 600;    
+}
 
+@mixin bodyfont($size) {
+  font-family: Lato;
+  font-weight: 300;
+  font-size: $size;
+}
+
+// App.js
+.app {  
+  @include bodyfont(14px);
+  background-color: #eeeeee;
   margin: 0;
   padding: 0;
-
+  
   .app-header {
     text-align: center;    
-    background-color: #264;
-    height: 80px;
+    background-image: url("../images/memphis-colorful.png");
+    background-repeat: repeat;    
     padding: 20px;
-    color: white;
+    color: black;
   }
   
   .app-title {
-    font-size: 1.5em;
+    @include h1font(30px);;
   }
   
   .app-intro {
-    font-size: large;
+    @include h3font(19px);
   }
 }
 
 div {
-  border-bottom: solid 3px white;
-  padding: 10px;
-
+  margin: 10px;
+  
+  h3 {
+    @include h3font(18px);
+  }
+  
   ul {
     padding: 0;
   }
-
+  
   li {
     list-style-type:none
   }
-
+  
+  // keeping this to add "add joke" form
   input {
-      @include font(16px);
-
-      border: none;
-      line-height: 21px;
-      padding: 5px;
-
-      &:focus {
-          outline: none;
-      }
+    @include bodyfont(16px);
+    
+    border: none;
+    line-height: 21px;
+    padding: 5px;
+    
+    &:focus {
+      outline: none;
+    }
   }
 }
 
+// Body of App.js
 .content {
+  display: flex;
+  flex-wrap: wrap;
+  
+  // Column header
+  .column-header {
     display: flex;
-    flex-wrap: wrap;
-}
-
-.joke-column {
+    align-items: center;    
+    
+    .refresh { // button custom styling 
+      margin-left: 20px;
+      height: 30px;
+    }
+  }
+  
+  // Column content
+  .joke-column {
     flex-basis: 0;
     flex: 1 1 160px;
-    // max-width: 260px;
-
+    
+    // Ul list of Jokes
     .list-of-jokes {
-        display: flex;
-        flex-direction: column;
+      display: flex;
+      flex-direction: column;
+      
+      .joke {    
+        display: inline-flex;
+        flex-direction: row;
+        align-items: center;
+        border: 2px solid #eeeeee;
+        
+        // Div with upvote, downvote, and count
+        .counter {
+          text-align: center;        
+        }
+      }
     }
+  }
 }
 
-.joke {    
-    display: inline-flex;
-    flex-direction: row;
-    align-items: center;
-
-    .counter {
-        text-align: center;        
-    }
-
-    .text {
-
-    }
+button {    
+  // remove blue underline
+  text-decoration: none;
+  border: 2px solid black;
+  border-radius: 20px;
+  
+  // transitions
+  transition-duration: .2s;
+  -webkit-transition-duration: .2s;
+  -moz-transition-duration: .2s;
+  
+  background-color: white;
+  padding: 3px 10px;
+  
+  &:hover {
+    color:white;
+    background-color:black;
+    
+    // transitions 
+    transition-duration: .2s;
+    -webkit-transition-duration: .11s;
+    -moz-transition-duration: .2s;
+  }
+  
+  &:focus {
+    // remove blue outline after click
+    outline: 0;
+  }
 }

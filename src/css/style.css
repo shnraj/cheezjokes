@@ -2,22 +2,29 @@
   font-family: Lato;
   font-weight: 300;
   font-size: 14px;
+  background-color: #eeeeee;
   margin: 0;
   padding: 0; }
   .app .app-header {
     text-align: center;
-    background-color: #264;
-    height: 80px;
+    background-image: url("../images/memphis-colorful.png");
+    background-repeat: repeat;
     padding: 20px;
-    color: white; }
+    color: black; }
   .app .app-title {
-    font-size: 1.5em; }
+    font-family: 'Bungee Inline';
+    font-size: 30px; }
   .app .app-intro {
-    font-size: large; }
+    font-family: 'Bungee Hairline';
+    font-size: 19px;
+    font-weight: 600; }
 
 div {
-  border-bottom: solid 3px white;
-  padding: 10px; }
+  margin: 10px; }
+  div h3 {
+    font-family: 'Bungee Hairline';
+    font-size: 18px;
+    font-weight: 600; }
   div ul {
     padding: 0; }
   div li {
@@ -35,17 +42,40 @@ div {
 .content {
   display: flex;
   flex-wrap: wrap; }
-
-.joke-column {
-  flex-basis: 0;
-  flex: 1 1 160px; }
-  .joke-column .list-of-jokes {
+  .content .column-header {
     display: flex;
-    flex-direction: column; }
+    align-items: center; }
+    .content .column-header .refresh {
+      margin-left: 20px;
+      height: 30px; }
+  .content .joke-column {
+    flex-basis: 0;
+    flex: 1 1 160px; }
+    .content .joke-column .list-of-jokes {
+      display: flex;
+      flex-direction: column; }
+      .content .joke-column .list-of-jokes .joke {
+        display: inline-flex;
+        flex-direction: row;
+        align-items: center;
+        border: 2px solid #eeeeee; }
+        .content .joke-column .list-of-jokes .joke .counter {
+          text-align: center; }
 
-.joke {
-  display: inline-flex;
-  flex-direction: row;
-  align-items: center; }
-  .joke .counter {
-    text-align: center; }
+button {
+  text-decoration: none;
+  border: 2px solid black;
+  border-radius: 20px;
+  transition-duration: .2s;
+  -webkit-transition-duration: .2s;
+  -moz-transition-duration: .2s;
+  background-color: white;
+  padding: 3px 10px; }
+  button:hover {
+    color: white;
+    background-color: black;
+    transition-duration: .2s;
+    -webkit-transition-duration: .11s;
+    -moz-transition-duration: .2s; }
+  button:focus {
+    outline: 0; }
