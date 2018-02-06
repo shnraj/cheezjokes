@@ -1,5 +1,9 @@
 # cheezjokes
-App that lets people browse cheesy jokes
+React + flask app that lets people browse and vote on jokes
+
+![Web screen shot](src/images/web-ss.png "Web UI")
+
+![Mobile screen shot](src/images/mobile-ss.png "Mobile Responsive UI")
 
 ## DB
 Using sqlite3 as a lightweight datastore for joke and vote data:
