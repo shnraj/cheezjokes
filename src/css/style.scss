@@ -52,8 +52,15 @@ div {
   }
 }
 
-.random-jokes {
-    width: 30%;
+.content {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.joke-column {
+    flex-basis: 0;
+    flex: 1 1 160px;
+    // max-width: 260px;
 
     .list-of-jokes {
         display: flex;

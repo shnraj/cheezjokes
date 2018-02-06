@@ -32,9 +32,14 @@ div {
     div input:focus {
       outline: none; }
 
-.random-jokes {
-  width: 30%; }
-  .random-jokes .list-of-jokes {
+.content {
+  display: flex;
+  flex-wrap: wrap; }
+
+.joke-column {
+  flex-basis: 0;
+  flex: 1 1 160px; }
+  .joke-column .list-of-jokes {
     display: flex;
     flex-direction: column; }
 
